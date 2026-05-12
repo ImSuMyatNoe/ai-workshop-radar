@@ -1,0 +1,397 @@
+# Top-tier AI conferences with multi-stage deadlines.
+# Schema:
+#   id: lowercase shortname + year, e.g. neurips2026
+#   name: short name (NeurIPS, ICML, ACL, ...)
+#   full_name: full conference name
+#   year: int
+#   url: official website
+#   location: city, country
+#   start_date / end_date: YYYY-MM-DD
+#   topics: list of topic IDs from topics.yaml
+#   tier: A* | A | B (community-perceived tier; for filtering)
+#   deadlines: list of {stage, deadline, timezone, note}
+#     stage: abstract | paper | supplementary | rebuttal | notification |
+#            camera_ready | travel_grant | registration | poster | workshops_deadline
+#     timezone: IANA tz (e.g. "Asia/Tokyo") or "AoE" (Anywhere on Earth = UTC-12)
+
+conferences:
+
+  # =========== AI / ML general ===========
+  - id: neurips2026
+    name: NeurIPS
+    full_name: Conference on Neural Information Processing Systems
+    year: 2026
+    url: https://neurips.cc/Conferences/2026
+    location: San Diego, USA
+    start_date: 2026-12-01
+    end_date: 2026-12-07
+    tier: A*
+    description: >
+      The premier ML conference covering deep learning, optimization, generative models,
+      neuroscience-inspired AI, RL, fairness, theory, and applications. Both empirical
+      and theoretical work; broad scope makes it the default top-tier venue for ML.
+    h_index: 372
+    acceptance_rate: "26.1%"
+    ranking: CORE A*, CCF-A
+    submission_url: https://openreview.net/group?id=NeurIPS.cc/2026/Conference
+    format_notes: >
+      9 pages excluding refs/appendix; LaTeX template required; double-blind; unlimited
+      supplementary; checklist mandatory. OpenReview submission.
+    topics: [ml_general, ai_safety, multimodal, nlp, cv, rl, agents, interpretability, evaluation]
+    deadlines:
+      - stage: abstract
+        deadline: "2026-05-15 23:59:59"
+        timezone: AoE
+        note: Mandatory abstract registration
+      - stage: paper
+        deadline: "2026-05-22 23:59:59"
+        timezone: AoE
+      - stage: supplementary
+        deadline: "2026-05-29 23:59:59"
+        timezone: AoE
+      - stage: workshops_deadline
+        deadline: "2026-08-10 23:59:59"
+        timezone: AoE
+        note: Workshop proposal submission
+
+  - id: icml2026
+    name: ICML
+    full_name: International Conference on Machine Learning
+    year: 2026
+    url: https://icml.cc/Conferences/2026
+    location: Seoul, Korea
+    start_date: 2026-07-06
+    end_date: 2026-07-12
+    tier: A*
+    topics: [ml_general, ai_safety, multimodal, nlp, cv, rl, interpretability]
+    deadlines:
+      - stage: abstract
+        deadline: "2026-01-24 11:59:59"
+        timezone: UTC
+      - stage: paper
+        deadline: "2026-01-31 23:59:59"
+        timezone: AoE
+      - stage: workshops_deadline
+        deadline: "2026-02-21 23:59:59"
+        timezone: AoE
+
+  - id: iclr2027
+    name: ICLR
+    full_name: International Conference on Learning Representations
+    year: 2027
+    url: https://iclr.cc/Conferences/2027
+    location: TBD
+    start_date: 2027-04-25
+    end_date: 2027-04-29
+    tier: A*
+    topics: [ml_general, ai_safety, multimodal, nlp, cv, rl, interpretability]
+    deadlines:
+      - stage: abstract
+        deadline: "2026-09-25 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior years — verify
+      - stage: paper
+        deadline: "2026-10-02 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior years — verify
+
+  - id: aaai2027
+    name: AAAI
+    full_name: AAAI Conference on Artificial Intelligence
+    year: 2027
+    url: https://aaai.org/conference/aaai/aaai-27/
+    location: TBD
+    start_date: 2027-02-01
+    end_date: 2027-02-08
+    tier: A*
+    topics: [ml_general, ai_safety, nlp, cv, agents, ai_ethics]
+    deadlines:
+      - stage: abstract
+        deadline: "2026-08-01 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior years
+      - stage: paper
+        deadline: "2026-08-08 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior years
+
+  - id: ijcai2026
+    name: IJCAI-ECAI
+    full_name: International Joint Conference on Artificial Intelligence
+    year: 2026
+    url: https://2026.ijcai.org/
+    location: Bremen, Germany
+    start_date: 2026-08-15
+    end_date: 2026-08-21
+    tier: A*
+    topics: [ml_general, ai_safety, agents, ai_ethics, robotics]
+    deadlines:
+      - stage: paper
+        deadline: "2026-01-22 23:59:59"
+        timezone: AoE
+        note: Phase 1 review
+
+  - id: aistats2026
+    name: AISTATS
+    full_name: International Conference on Artificial Intelligence and Statistics
+    year: 2026
+    url: https://virtual.aistats.org/Conferences/2026/
+    location: virtual
+    start_date: 2026-05-03
+    end_date: 2026-05-05
+    tier: A
+    topics: [ml_general]
+    deadlines:
+      - stage: paper
+        deadline: "2025-10-09 23:59:59"
+        timezone: AoE
+
+  # =========== NLP ===========
+  - id: acl2026
+    name: ACL
+    full_name: Annual Meeting of the Association for Computational Linguistics
+    year: 2026
+    url: https://2026.aclweb.org/
+    location: Vienna, Austria
+    start_date: 2026-07-26
+    end_date: 2026-07-31
+    tier: A*
+    description: >
+      Top venue for computational linguistics and NLP. Strong on language models,
+      multilinguality, multimodality, generation, dialogue, ethics in NLP.
+    h_index: 200
+    acceptance_rate: "21.3%"
+    ranking: CORE A*, CCF-A
+    submission_url: https://openreview.net/group?id=aclweb.org/ACL/ARR
+    format_notes: >
+      8 pages long / 4 pages short, ARR rolling review or direct. Anonymity period applies.
+      Author Response Form required for ARR.
+    topics: [nlp, multimodal, low_resource, ai_safety, evaluation]
+    deadlines:
+      - stage: paper
+        deadline: "2026-02-15 23:59:59"
+        timezone: AoE
+        note: Direct submission (ARR commitment) — verify ARR cycle dates separately
+      - stage: workshops_deadline
+        deadline: "2026-04-20 23:59:59"
+        timezone: AoE
+
+  - id: emnlp2026
+    name: EMNLP
+    full_name: Conference on Empirical Methods in Natural Language Processing
+    year: 2026
+    url: https://2026.emnlp.org/
+    location: TBD
+    start_date: 2026-11-08
+    end_date: 2026-11-12
+    tier: A*
+    description: >
+      Top NLP venue focused on empirical methods. Strong on language modeling,
+      multilingual NLP, evaluation, low-resource languages, dialogue, IE.
+    h_index: 175
+    acceptance_rate: "23%"
+    ranking: CORE A*, CCF-B
+    submission_url: https://openreview.net/group?id=aclweb.org/ACL/ARR
+    format_notes: >
+      8/4 page long/short. ARR commitment or direct. Anonymous during review.
+    topics: [nlp, multimodal, low_resource, ai_safety, evaluation]
+    deadlines:
+      - stage: paper
+        deadline: "2026-05-19 23:59:59"
+        timezone: AoE
+        note: May ARR cycle commitment deadline
+      - stage: workshops_deadline
+        deadline: "2026-08-15 23:59:59"
+        timezone: AoE
+
+  - id: naacl2027
+    name: NAACL
+    full_name: North American Chapter of the ACL
+    year: 2027
+    url: https://2027.naacl.org/
+    location: TBD
+    start_date: 2027-06-01
+    end_date: 2027-06-06
+    tier: A
+    topics: [nlp, multimodal, low_resource]
+    deadlines:
+      - stage: paper
+        deadline: "2026-11-15 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior years
+
+  # =========== CV ===========
+  - id: cvpr2026
+    name: CVPR
+    full_name: Conference on Computer Vision and Pattern Recognition
+    year: 2026
+    url: https://cvpr.thecvf.com/Conferences/2026
+    location: Denver, USA
+    start_date: 2026-06-03
+    end_date: 2026-06-07
+    tier: A*
+    topics: [cv, multimodal, ml_general]
+    deadlines:
+      - stage: paper
+        deadline: "2025-11-06 23:59:59"
+        timezone: "Pacific/Auckland"
+      - stage: workshops_deadline
+        deadline: "2026-02-15 23:59:59"
+        timezone: AoE
+
+  - id: iccv2027
+    name: ICCV
+    full_name: International Conference on Computer Vision
+    year: 2027
+    url: https://iccv.thecvf.com/
+    location: TBD
+    start_date: 2027-10-01
+    end_date: 2027-10-08
+    tier: A*
+    topics: [cv, multimodal]
+    deadlines:
+      - stage: paper
+        deadline: "2027-03-15 23:59:59"
+        timezone: AoE
+        note: Estimated — verify
+
+  - id: eccv2026
+    name: ECCV
+    full_name: European Conference on Computer Vision
+    year: 2026
+    url: https://eccv.ecva.net/
+    location: TBD
+    start_date: 2026-10-12
+    end_date: 2026-10-18
+    tier: A*
+    topics: [cv, multimodal]
+    deadlines:
+      - stage: paper
+        deadline: "2026-03-07 23:59:59"
+        timezone: AoE
+        note: Estimated
+
+  # =========== AI Safety & Ethics ===========
+  - id: aies2026
+    name: AIES
+    full_name: AAAI/ACM Conference on AI, Ethics, and Society
+    year: 2026
+    url: https://www.aies-conference.com/2026/
+    location: TBD
+    start_date: 2026-10-12
+    end_date: 2026-10-14
+    tier: A
+    description: >
+      Interdisciplinary venue at the intersection of AI, ethics, society, law,
+      philosophy. Welcomes empirical, normative, critical, and technical work.
+    h_index: 35
+    acceptance_rate: "29%"
+    ranking: CORE A
+    submission_url: https://easychair.org/conferences/?conf=aies26
+    format_notes: >
+      Non-archival option available for journal submissions under review. LLM use in
+      paper text prohibited unless part of experimental analysis. ChatGPT not citable.
+    topics: [ai_safety, ai_ethics]
+    deadlines:
+      - stage: abstract
+        deadline: "2026-05-14 23:59:59"
+        timezone: AoE
+      - stage: paper
+        deadline: "2026-05-21 23:59:59"
+        timezone: AoE
+
+  - id: facct2026
+    name: FAccT
+    full_name: ACM Conference on Fairness, Accountability, and Transparency
+    year: 2026
+    url: https://facctconference.org/
+    location: TBD
+    start_date: 2026-06-22
+    end_date: 2026-06-25
+    tier: A
+    topics: [ai_ethics, ai_safety]
+    deadlines:
+      - stage: paper
+        deadline: "2026-01-22 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior years
+
+  # =========== Japan-domestic venues ===========
+  - id: nlp_jp_2026
+    name: NLP-JP
+    full_name: Annual Meeting of the Association for Natural Language Processing (Japan)
+    year: 2026
+    url: https://www.anlp.jp/nlp2026/
+    location: Utsunomiya, Japan
+    start_date: 2026-03-09
+    end_date: 2026-03-13
+    tier: B
+    topics: [nlp, japan_local, low_resource]
+    deadlines:
+      - stage: paper
+        deadline: "2026-01-09 23:59:59"
+        timezone: "Asia/Tokyo"
+
+  - id: jsai2026
+    name: JSAI
+    full_name: Annual Conference of the Japanese Society for AI
+    year: 2026
+    url: https://www.ai-gakkai.or.jp/jsai2026/
+    location: Japan
+    start_date: 2026-06-09
+    end_date: 2026-06-12
+    tier: B
+    topics: [ml_general, japan_local]
+    deadlines:
+      - stage: paper
+        deadline: "2026-02-28 23:59:59"
+        timezone: "Asia/Tokyo"
+        note: Estimated
+
+  - id: miru2026
+    name: MIRU
+    full_name: Meeting on Image Recognition and Understanding
+    year: 2026
+    url: https://cvim.ipsj.or.jp/MIRU2026/
+    location: Japan
+    start_date: 2026-07-28
+    end_date: 2026-07-31
+    tier: B
+    topics: [cv, japan_local]
+    deadlines:
+      - stage: paper
+        deadline: "2026-04-30 23:59:59"
+        timezone: "Asia/Tokyo"
+        note: Estimated
+
+  - id: ibis2026
+    name: IBIS
+    full_name: Information-Based Induction Sciences workshop
+    year: 2026
+    url: https://ibisml.org/ibis2026/
+    location: Japan
+    start_date: 2026-11-22
+    end_date: 2026-11-25
+    tier: B
+    topics: [ml_general, japan_local]
+    deadlines:
+      - stage: paper
+        deadline: "2026-09-15 23:59:59"
+        timezone: "Asia/Tokyo"
+        note: Estimated
+
+  # =========== Robotics ===========
+  - id: icra2026
+    name: ICRA
+    full_name: IEEE International Conference on Robotics and Automation
+    year: 2026
+    url: https://2026.ieee-icra.org/
+    location: TBD
+    start_date: 2026-05-25
+    end_date: 2026-05-29
+    tier: A
+    topics: [robotics, rl]
+    deadlines:
+      - stage: paper
+        deadline: "2025-09-15 23:59:59"
+        timezone: AoE

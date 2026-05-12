@@ -1,0 +1,49 @@
+name: Weekly workshop discovery
+
+on:
+  schedule:
+    # Sundays 02:00 UTC
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run discovery agent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DATA_DIR: ./data
+        run: python scripts/discover_workshops.py
+
+      - name: Create Pull Request with proposed additions
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: bot/auto-discovery
+          delete-branch: true
+          title: "🤖 Auto-discovered workshops"
+          commit-message: "chore: auto-discovered workshops"
+          body: |
+            Auto-discovered workshops from conference CFP pages.
+
+            Please review each entry before merging:
+            - Check the deadlines and timezone
+            - Verify topics are tagged correctly
+            - Confirm the URL is the workshop page, not the parent conference
+          add-paths: |
+            data/proposed_workshops.yaml

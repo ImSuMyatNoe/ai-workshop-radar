@@ -1,0 +1,63 @@
+# Research-area taxonomy. Users subscribe to topics; venues are tagged with them.
+# Keep these stable — they're referenced by ID in user prefs.
+
+topics:
+  - id: ai_safety
+    name: AI Safety & Alignment
+    description: Safety evaluation, alignment, red-teaming, jailbreaking, harm reduction
+
+  - id: multimodal
+    name: Multimodal / VLM
+    description: Vision-language models, audio-text, video understanding
+
+  - id: nlp
+    name: Natural Language Processing
+    description: General NLP, language models, generation, parsing
+
+  - id: cv
+    name: Computer Vision
+    description: General CV, detection, segmentation, generation
+
+  - id: ml_general
+    name: General Machine Learning
+    description: Theory, optimization, architectures, training
+
+  - id: rl
+    name: Reinforcement Learning
+    description: RL, RLHF, agents, planning
+
+  - id: agents
+    name: LLM Agents
+    description: Tool-use, web agents, coding agents, autonomous systems
+
+  - id: robotics
+    name: Robotics
+    description: Manipulation, navigation, embodied AI
+
+  - id: ai_ethics
+    name: AI Ethics & Society
+    description: Fairness, bias, governance, ethics, AIES, FAccT
+
+  - id: interpretability
+    name: Interpretability & Mechanistic
+    description: Probing, mechanistic interpretability, explainability
+
+  - id: evaluation
+    name: Evaluation & Benchmarks
+    description: New benchmarks, evaluation methodology
+
+  - id: low_resource
+    name: Low-resource & Multilingual
+    description: Low-resource languages, cross-lingual, multilingual models
+
+  - id: speech
+    name: Speech & Audio
+    description: ASR, TTS, audio understanding
+
+  - id: hci_ai
+    name: HCI for AI
+    description: Human-AI interaction, UX of AI systems
+
+  - id: japan_local
+    name: Japan-domestic venues
+    description: NLP-JP, JSAI, MIRU, IBIS, ANLP, etc.

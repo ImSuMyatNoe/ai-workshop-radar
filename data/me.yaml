@@ -1,0 +1,42 @@
+# Your personal AI Workshop Radar config.
+#
+# This file is PUBLIC (it's in your forked repo). DO NOT put your Telegram
+# chat ID or Slack webhook here — those go in GitHub repo secrets:
+#   - TELEGRAM_BOT_TOKEN
+#   - TELEGRAM_CHAT_ID
+#   - SLACK_WEBHOOK_URL (optional)
+
+handle: me
+
+# IANA timezone — pick yours from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Tokyo
+
+# === SUBSCRIPTION FILTERS ===
+# A venue matches if ANY of: topics ∪ keywords ∪ venues hits.
+# Use BOTH topics (broad categories) and keywords (specific terms) for best results.
+
+# Broad research areas. IDs from data/topics.yaml.
+topics:
+  - ai_safety
+  - multimodal
+  - nlp
+  - japan_local
+
+# Free-text keywords matched against venue name/description/topics/location.
+# Single words use word-boundary matching; multi-word phrases use substring.
+# Examples: "jailbreak", "low-resource", "vision-language", "RLHF", "tokyo"
+keywords:
+  - vision-language
+  - red teaming
+  - safety
+  - multilingual
+  - japanese
+
+# Optional: subscribe to specific venues by ID (in addition to topics + keywords).
+# IDs come from data/conferences.yaml and data/workshops.yaml.
+venues: []
+
+# === DISPLAY OPTIONS ===
+include_workshops: true
+include_conferences: true
+digest_days_ahead: 30

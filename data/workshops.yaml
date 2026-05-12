@@ -1,0 +1,215 @@
+# Workshops at top-tier AI conferences. This is the killer differentiator —
+# none of the major deadline trackers cover workshops well.
+#
+# Schema is the same as conferences.yaml, plus:
+#   parent_conference: id from conferences.yaml (the host venue)
+#   acronym: short workshop name used by community
+
+workshops:
+
+  # ========== NeurIPS 2026 workshops (proposals open until Aug 2026) ==========
+  # These are placeholder entries — the auto-discovery agent will populate
+  # actual workshops once NeurIPS 2026 accepted workshops are announced.
+
+  # ========== Recent / recurring AI Safety workshops ==========
+  - id: safe_genai_neurips2026
+    name: SafeGenAI
+    full_name: Workshop on Safe & Trustworthy Generative AI
+    acronym: SafeGenAI
+    parent_conference: neurips2026
+    year: 2026
+    url: https://safegenaiworkshop.github.io/
+    location: San Diego, USA
+    start_date: 2026-12-06
+    end_date: 2026-12-06
+    tier: workshop
+    description: >
+      Workshop on jailbreaking, red-teaming, alignment, safety eval and harmful
+      content detection for generative models (LLMs and multimodal). Strongly
+      relevant to vision-language safety work.
+    ranking: NeurIPS Workshop
+    submission_url: https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/SafeGenAI
+    format_notes: >
+      Non-archival; 4-page short or 8-page long. OpenReview submission.
+    topics: [ai_safety, multimodal, evaluation]
+    deadlines:
+      - stage: paper
+        deadline: "2026-09-15 23:59:59"
+        timezone: AoE
+        note: Estimated — verify when NeurIPS 2026 workshops announced
+
+  - id: redteaming_neurips2026
+    name: Red Teaming GenAI
+    full_name: Red Teaming Generative AI Workshop
+    acronym: RTGen
+    parent_conference: neurips2026
+    year: 2026
+    url: ""
+    location: San Diego, USA
+    start_date: 2026-12-06
+    end_date: 2026-12-06
+    tier: workshop
+    description: >
+      Adversarial evaluation, jailbreaking, attack-defense for generative AI.
+      Covers vision-language models, agents, image generation. Red teaming methods.
+    ranking: NeurIPS Workshop
+    topics: [ai_safety, evaluation]
+    deadlines:
+      - stage: paper
+        deadline: "2026-09-20 23:59:59"
+        timezone: AoE
+        note: Tentative — auto-discovery will update
+
+  # ========== Multimodal / VLM workshops ==========
+  - id: mmfm_cvpr2026
+    name: MMFM
+    full_name: Workshop on What is Next in Multimodal Foundation Models
+    acronym: MMFM
+    parent_conference: cvpr2026
+    year: 2026
+    url: https://sites.google.com/view/mmfm3rdworkshop/
+    location: Denver, USA
+    start_date: 2026-06-07
+    end_date: 2026-06-07
+    tier: workshop
+    topics: [multimodal, cv]
+    deadlines:
+      - stage: paper
+        deadline: "2026-03-15 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior MMFM cycles
+
+  - id: vlms4all_iccv2027
+    name: VLMs4All
+    full_name: Vision-Language Models for All Cultures and Languages
+    acronym: VLMs4All
+    parent_conference: iccv2027
+    year: 2027
+    url: ""
+    location: TBD
+    start_date: 2027-10-01
+    end_date: 2027-10-01
+    tier: workshop
+    topics: [multimodal, low_resource, ai_ethics]
+    deadlines:
+      - stage: paper
+        deadline: "2027-07-01 23:59:59"
+        timezone: AoE
+        note: Estimated
+
+  # ========== Agents / LLM workshops ==========
+  - id: agentic_neurips2026
+    name: Open-World Agents
+    full_name: Workshop on Open-World Agents
+    acronym: OWA
+    parent_conference: neurips2026
+    year: 2026
+    url: ""
+    location: San Diego, USA
+    start_date: 2026-12-06
+    end_date: 2026-12-06
+    tier: workshop
+    topics: [agents, rl, ml_general]
+    deadlines:
+      - stage: paper
+        deadline: "2026-09-25 23:59:59"
+        timezone: AoE
+        note: Estimated
+
+  # ========== ACL 2026 workshops ==========
+  - id: woah_acl2026
+    name: WOAH
+    full_name: Workshop on Online Abuse and Harms
+    acronym: WOAH
+    parent_conference: acl2026
+    year: 2026
+    url: https://www.workshopononlineabuse.com/
+    location: Vienna, Austria
+    start_date: 2026-07-31
+    end_date: 2026-07-31
+    tier: workshop
+    topics: [ai_safety, ai_ethics, nlp]
+    deadlines:
+      - stage: paper
+        deadline: "2026-04-22 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior years
+
+  - id: trustnlp_acl2026
+    name: TrustNLP
+    full_name: Workshop on Trustworthy Natural Language Processing
+    acronym: TrustNLP
+    parent_conference: acl2026
+    year: 2026
+    url: https://trustnlpworkshop.github.io/
+    location: Vienna, Austria
+    start_date: 2026-07-31
+    end_date: 2026-07-31
+    tier: workshop
+    description: >
+      Trustworthiness in NLP: bias, fairness, robustness, privacy, safety,
+      transparency. Welcomes multilingual and low-resource perspectives.
+    ranking: ACL Workshop
+    submission_url: https://openreview.net/group?id=aclweb.org/ACL/2026/Workshop/TrustNLP
+    format_notes: 8-page long / 4-page short. Anonymous review.
+    topics: [ai_safety, ai_ethics, nlp]
+    deadlines:
+      - stage: paper
+        deadline: "2026-04-22 23:59:59"
+        timezone: AoE
+        note: Estimated
+
+  - id: c3nlp_acl2026
+    name: C3NLP
+    full_name: Workshop on Cross-Cultural Considerations in NLP
+    acronym: C3NLP
+    parent_conference: acl2026
+    year: 2026
+    url: https://sites.google.com/view/c3nlp/
+    location: Vienna, Austria
+    start_date: 2026-07-31
+    end_date: 2026-07-31
+    tier: workshop
+    topics: [nlp, low_resource, ai_ethics]
+    deadlines:
+      - stage: paper
+        deadline: "2026-04-22 23:59:59"
+        timezone: AoE
+        note: Estimated
+
+  # ========== EMNLP 2026 workshops ==========
+  - id: blackboxnlp_emnlp2026
+    name: BlackboxNLP
+    full_name: Workshop on Analyzing and Interpreting Neural Networks for NLP
+    acronym: BlackboxNLP
+    parent_conference: emnlp2026
+    year: 2026
+    url: https://blackboxnlp.github.io/
+    location: TBD
+    start_date: 2026-11-12
+    end_date: 2026-11-12
+    tier: workshop
+    topics: [interpretability, nlp]
+    deadlines:
+      - stage: paper
+        deadline: "2026-08-22 23:59:59"
+        timezone: AoE
+        note: Estimated based on prior years
+
+  - id: wmt_emnlp2026
+    name: WMT
+    full_name: Conference on Machine Translation
+    acronym: WMT
+    parent_conference: emnlp2026
+    year: 2026
+    url: https://www2.statmt.org/wmt26/
+    location: TBD
+    start_date: 2026-11-12
+    end_date: 2026-11-13
+    tier: workshop
+    topics: [nlp, low_resource]
+    deadlines:
+      - stage: paper
+        deadline: "2026-08-15 23:59:59"
+        timezone: AoE
+        note: Estimated

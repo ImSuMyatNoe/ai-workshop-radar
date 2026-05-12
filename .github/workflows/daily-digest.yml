@@ -1,0 +1,52 @@
+name: Daily digest
+
+on:
+  schedule:
+    # 09:00 JST = 00:00 UTC. Adjust to your preferred time.
+    # Cron syntax: minute hour day month weekday (UTC).
+    - cron: "0 0 * * *"
+  workflow_dispatch:   # also lets you trigger manually from the Actions tab
+
+jobs:
+  send-digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write   # to commit data/notified.yaml back
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Send digest
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          # For multi-user mode, add namespaced secrets in your fork:
+          #   TELEGRAM_CHAT_ID_<HANDLE>
+          #   SLACK_WEBHOOK_URL_<HANDLE>
+          DATA_DIR: ./data
+          PYTHONPATH: .
+        run: python scripts/send_digests.py
+
+      # Commit the updated notified.yaml so we don't re-notify tomorrow.
+      - name: Commit notification state
+        run: |
+          if [[ -n "$(git status --porcelain data/notified.yaml)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/notified.yaml
+            git commit -m "chore: update notified.yaml [skip ci]"
+            git push
+          else
+            echo "No notification state changes"
+          fi
